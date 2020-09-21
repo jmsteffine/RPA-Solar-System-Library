@@ -1,0 +1,494 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1146,830" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Select a topic from a list of phenomena in the Solar System and open a webpage that provides more information about the selected topic." DisplayName="Solar System Library" sap:VirtualizedContainerService.HintSize="539,741" sap2010:WorkflowViewState.IdRef="Sequence_28">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Topic" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InputDialog sap2010:Annotation.AnnotationText="Select a topic from a list of phenomena in the Solar System." DisplayName="Input Dialog: Select Topic" sap:VirtualizedContainerService.HintSize="497,134" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Select a topic to learn more..." Options="[{&quot;Proxima Centauri&quot;,&quot;Sun&quot;,&quot;Mercury&quot;,&quot;Venus&quot;,&quot;Van Allen Radiation Belt&quot;,&quot;Earth&quot;,&quot;Mars&quot;,&quot;Asteroid Belt&quot;,&quot;Jupiter&quot;,&quot;Saturn&quot;,&quot;Uranus&quot;,&quot;Netptune&quot;,&quot;Pluto&quot;}]" Title="The Solar System">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[Topic]</OutArgument>
+      </ui:InputDialog.Result>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InputDialog>
+    <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Open a webpage that provides more information about the selected topic." DisplayName="Switch: Solar System Library" Expression="[Topic]" sap:VirtualizedContainerService.HintSize="497,433" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+      <Switch.Default>
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Cancelled" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_54" Text="[&quot;Library will now close.&quot;]" />
+      </Switch.Default>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence x:Key="Proxima Centauri" DisplayName="Selection: Proxima Centauri" sap:VirtualizedContainerService.HintSize="908,454" sap2010:WorkflowViewState.IdRef="Sequence_15">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ButtonProximaCentauri" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:MessageBox Caption="{x:Null}" Buttons="OkCancel" ChosenButton="[ButtonProximaCentauri]" DisplayName="Solar System Library" sap:VirtualizedContainerService.HintSize="864,59" sap2010:WorkflowViewState.IdRef="MessageBox_28" Text="[&quot;You selected &quot; + Topic + &quot;: Click OK to learn more...&quot;]" />
+        <If Condition="[ButtonProximaCentauri = &quot;Ok&quot;]" DisplayName="If: Proxima Centauri" sap:VirtualizedContainerService.HintSize="864,306" sap2010:WorkflowViewState.IdRef="If_14">
+          <If.Then>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open Chrome browser to webpage that provides more information about Proxima Centauri." BrowserType="Chrome" DisplayName="Open Browser: Proxima Centauri" sap:VirtualizedContainerService.HintSize="485,158" sap2010:WorkflowViewState.IdRef="OpenBrowser_14" Url="https://en.wikipedia.org/wiki/Proxima_Centauri">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </If.Then>
+          <If.Else>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Cancelled" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_29" Text="[&quot;Library will now close.&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence x:Key="Sun" DisplayName="Selection: Sun" sap:VirtualizedContainerService.HintSize="908,443" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ButtonSun" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:MessageBox Caption="{x:Null}" Buttons="OkCancel" ChosenButton="[ButtonSun]" DisplayName="Solar System Library" sap:VirtualizedContainerService.HintSize="864,59" sap2010:WorkflowViewState.IdRef="MessageBox_30" Text="[&quot;You selected the &quot; + Topic + &quot;: Click OK to learn more...&quot;]" />
+        <If Condition="[ButtonSun = &quot;Ok&quot;]" DisplayName="If: Sun" sap:VirtualizedContainerService.HintSize="864,295" sap2010:WorkflowViewState.IdRef="If_15">
+          <If.Then>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open Chrome browser to webpage that provides more information about the Sun." BrowserType="Chrome" DisplayName="Open Browser: Sun" sap:VirtualizedContainerService.HintSize="485,147" sap2010:WorkflowViewState.IdRef="OpenBrowser_15" Url="https://en.wikipedia.org/wiki/Sun">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </If.Then>
+          <If.Else>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Cancelled" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_31" Text="[&quot;Library will now close.&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence x:Key="Mercury" DisplayName="Selection: Mercury" sap:VirtualizedContainerService.HintSize="908,443" sap2010:WorkflowViewState.IdRef="Sequence_17">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ButtonMercury" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:MessageBox Caption="{x:Null}" Buttons="OkCancel" ChosenButton="[ButtonMercury]" DisplayName="Solar System Library" sap:VirtualizedContainerService.HintSize="864,59" sap2010:WorkflowViewState.IdRef="MessageBox_32" Text="[&quot;You selected &quot; + Topic + &quot;: Click OK to learn more...&quot;]" />
+        <If Condition="[ButtonMercury = &quot;Ok&quot;]" DisplayName="If: Mercury" sap:VirtualizedContainerService.HintSize="864,295" sap2010:WorkflowViewState.IdRef="If_16">
+          <If.Then>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open Chrome browser to webpage that provides more information about Mercury." BrowserType="Chrome" DisplayName="Open Browser: Mercury" sap:VirtualizedContainerService.HintSize="485,147" sap2010:WorkflowViewState.IdRef="OpenBrowser_16" Url="https://en.wikipedia.org/wiki/Mercury_(planet)">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </If.Then>
+          <If.Else>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Cancelled" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_33" Text="[&quot;Library will now close.&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence x:Key="Venus" DisplayName="Selection: Venus" sap:VirtualizedContainerService.HintSize="908,443" sap2010:WorkflowViewState.IdRef="Sequence_18">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ButtonVenus" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:MessageBox Caption="{x:Null}" Buttons="OkCancel" ChosenButton="[ButtonVenus]" DisplayName="Solar System Library" sap:VirtualizedContainerService.HintSize="864,59" sap2010:WorkflowViewState.IdRef="MessageBox_34" Text="[&quot;You selected the &quot; + Topic + &quot;: Click OK to learn more...&quot;]" />
+        <If Condition="[ButtonVenus = &quot;Ok&quot;]" DisplayName="If: Venus" sap:VirtualizedContainerService.HintSize="864,295" sap2010:WorkflowViewState.IdRef="If_17">
+          <If.Then>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open Chrome browser to webpage that provides more information about Venus." BrowserType="Chrome" DisplayName="Open Browser: Venus" sap:VirtualizedContainerService.HintSize="485,147" sap2010:WorkflowViewState.IdRef="OpenBrowser_17" Url="https://en.wikipedia.org/wiki/Venus">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </If.Then>
+          <If.Else>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Cancelled" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_35" Text="[&quot;Library will now close.&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence x:Key="Van Allen Radiation Belt" DisplayName="Selection: Van Allen Radiation Belt" sap:VirtualizedContainerService.HintSize="908,454" sap2010:WorkflowViewState.IdRef="Sequence_19">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ButtonVanAllenRadiationBelt" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:MessageBox Caption="{x:Null}" Buttons="OkCancel" ChosenButton="[ButtonVanAllenRadiationBelt]" DisplayName="Solar System Library" sap:VirtualizedContainerService.HintSize="864,59" sap2010:WorkflowViewState.IdRef="MessageBox_36" Text="[&quot;You selected the &quot; + Topic + &quot;: Click OK to learn more...&quot;]" />
+        <If Condition="[ButtonVanAllenRadiationBelt = &quot;Ok&quot;]" DisplayName="If: Van Allen Radiation Belt" sap:VirtualizedContainerService.HintSize="864,306" sap2010:WorkflowViewState.IdRef="If_18">
+          <If.Then>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open Chrome browser to webpage that provides more information about the Van Allen Radiation Belt." BrowserType="Chrome" DisplayName="Open Browser: Van Allen Radiation Belt" sap:VirtualizedContainerService.HintSize="485,158" sap2010:WorkflowViewState.IdRef="OpenBrowser_18" Url="https://en.wikipedia.org/wiki/Van_Allen_radiation_belt">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </If.Then>
+          <If.Else>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Cancelled" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_37" Text="[&quot;Library will now close.&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence x:Key="Earth" DisplayName="Selection: Earth" sap:VirtualizedContainerService.HintSize="908,443" sap2010:WorkflowViewState.IdRef="Sequence_20">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ButtonEarth" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:MessageBox Caption="{x:Null}" Buttons="OkCancel" ChosenButton="[ButtonEarth]" DisplayName="Solar System Library" sap:VirtualizedContainerService.HintSize="864,59" sap2010:WorkflowViewState.IdRef="MessageBox_38" Text="[&quot;You selected &quot; + Topic + &quot;: Click OK to learn more...&quot;]" />
+        <If Condition="[ButtonEarth = &quot;Ok&quot;]" DisplayName="If: Earth" sap:VirtualizedContainerService.HintSize="864,295" sap2010:WorkflowViewState.IdRef="If_19">
+          <If.Then>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open Chrome browser to webpage that provides more information about Earth." BrowserType="Chrome" DisplayName="Open Browser: Earth" sap:VirtualizedContainerService.HintSize="485,147" sap2010:WorkflowViewState.IdRef="OpenBrowser_19" Url="https://en.wikipedia.org/wiki/Earth">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </If.Then>
+          <If.Else>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Cancelled" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_39" Text="[&quot;Library will now close.&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence x:Key="Mars" DisplayName="Selection: Mars" sap:VirtualizedContainerService.HintSize="908,443" sap2010:WorkflowViewState.IdRef="Sequence_21">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ButtonMars" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:MessageBox Caption="{x:Null}" Buttons="OkCancel" ChosenButton="[ButtonMars]" DisplayName="Solar System Library" sap:VirtualizedContainerService.HintSize="864,59" sap2010:WorkflowViewState.IdRef="MessageBox_40" Text="[&quot;You selected &quot; + Topic + &quot;: Click OK to learn more...&quot;]" />
+        <If Condition="[ButtonMars = &quot;Ok&quot;]" DisplayName="If: Mars" sap:VirtualizedContainerService.HintSize="864,295" sap2010:WorkflowViewState.IdRef="If_20">
+          <If.Then>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open Chrome browser to webpage that provides more information about Mars." BrowserType="Chrome" DisplayName="Open Browser: Mars" sap:VirtualizedContainerService.HintSize="485,147" sap2010:WorkflowViewState.IdRef="OpenBrowser_20" Url="https://en.wikipedia.org/wiki/Mars">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </If.Then>
+          <If.Else>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Cancelled" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_41" Text="[&quot;Library will now close.&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence x:Key="Asteroid Belt" DisplayName="Selection: Asteroid Belt" sap:VirtualizedContainerService.HintSize="908,454" sap2010:WorkflowViewState.IdRef="Sequence_22">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ButtonAsteroidBelt" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:MessageBox Caption="{x:Null}" Buttons="OkCancel" ChosenButton="[ButtonAsteroidBelt]" DisplayName="Solar System Library" sap:VirtualizedContainerService.HintSize="864,59" sap2010:WorkflowViewState.IdRef="MessageBox_42" Text="[&quot;You selected the &quot; + Topic + &quot;: Click OK to learn more...&quot;]" />
+        <If Condition="[ButtonAsteroidBelt = &quot;Ok&quot;]" DisplayName="If: Asteroid Belt" sap:VirtualizedContainerService.HintSize="864,306" sap2010:WorkflowViewState.IdRef="If_21">
+          <If.Then>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open Chrome browser to webpage that provides more information about the Asteroid Belt." BrowserType="Chrome" DisplayName="Open Browser: Asteroid Belt" sap:VirtualizedContainerService.HintSize="485,158" sap2010:WorkflowViewState.IdRef="OpenBrowser_21" Url="https://en.wikipedia.org/wiki/Asteroid_belt">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </If.Then>
+          <If.Else>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Cancelled" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_43" Text="[&quot;Library will now close.&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence x:Key="Jupiter" DisplayName="Selection: Jupiter" sap:VirtualizedContainerService.HintSize="908,486" sap2010:WorkflowViewState.IdRef="Sequence_23">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ButtonJupiter" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:MessageBox Caption="{x:Null}" Buttons="OkCancel" ChosenButton="[ButtonJupiter]" DisplayName="Solar System Library" sap:VirtualizedContainerService.HintSize="866,59" sap2010:WorkflowViewState.IdRef="MessageBox_44" Text="[&quot;You selected &quot; + Topic + &quot;: Click OK to learn more...&quot;]" />
+        <If Condition="[ButtonJupiter = &quot;Ok&quot;]" DisplayName="If: Jupiter" sap:VirtualizedContainerService.HintSize="866,295" sap2010:WorkflowViewState.IdRef="If_22">
+          <If.Then>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open Chrome browser to webpage that provides more information about Jupiter." BrowserType="Chrome" DisplayName="Open Browser: Jupiter" sap:VirtualizedContainerService.HintSize="485,147" sap2010:WorkflowViewState.IdRef="OpenBrowser_22" Url="https://en.wikipedia.org/wiki/Jupiter">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </If.Then>
+          <If.Else>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Cancelled" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_45" Text="[&quot;Library will now close.&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence x:Key="Saturn" DisplayName="Selection: Saturn" sap:VirtualizedContainerService.HintSize="908,486" sap2010:WorkflowViewState.IdRef="Sequence_24">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ButtonSaturn" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:MessageBox Caption="{x:Null}" Buttons="OkCancel" ChosenButton="[ButtonSaturn]" DisplayName="Solar System Library" sap:VirtualizedContainerService.HintSize="866,59" sap2010:WorkflowViewState.IdRef="MessageBox_46" Text="[&quot;You selected &quot; + Topic + &quot;: Click OK to learn more...&quot;]" />
+        <If Condition="[ButtonSaturn = &quot;Ok&quot;]" DisplayName="If: Saturn" sap:VirtualizedContainerService.HintSize="866,295" sap2010:WorkflowViewState.IdRef="If_23">
+          <If.Then>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open Chrome browser to webpage that provides more information about Saturn." BrowserType="Chrome" DisplayName="Open Browser: Saturn" sap:VirtualizedContainerService.HintSize="485,147" sap2010:WorkflowViewState.IdRef="OpenBrowser_23" Url="https://en.wikipedia.org/wiki/Saturn">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </If.Then>
+          <If.Else>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Cancelled" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_47" Text="[&quot;Library will now close.&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence x:Key="Uranus" DisplayName="Selection: Uranus" sap:VirtualizedContainerService.HintSize="908,486" sap2010:WorkflowViewState.IdRef="Sequence_25">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ButtonUranus" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:MessageBox Caption="{x:Null}" Buttons="OkCancel" ChosenButton="[ButtonUranus]" DisplayName="Solar System Library" sap:VirtualizedContainerService.HintSize="866,59" sap2010:WorkflowViewState.IdRef="MessageBox_48" Text="[&quot;You selected &quot; + Topic + &quot;: Click OK to learn more...&quot;]" />
+        <If Condition="[ButtonUranus = &quot;Ok&quot;]" DisplayName="If: Uranus" sap:VirtualizedContainerService.HintSize="866,295" sap2010:WorkflowViewState.IdRef="If_24">
+          <If.Then>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open Chrome browser to webpage that provides more information about Uranus." BrowserType="Chrome" DisplayName="Open Browser: Uranus" sap:VirtualizedContainerService.HintSize="485,147" sap2010:WorkflowViewState.IdRef="OpenBrowser_24" Url="https://en.wikipedia.org/wiki/Uranus">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </If.Then>
+          <If.Else>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Cancelled" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_49" Text="[&quot;Library will now close.&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence x:Key="Neptune" DisplayName="Selection: Neptune" sap:VirtualizedContainerService.HintSize="908,486" sap2010:WorkflowViewState.IdRef="Sequence_26">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ButtonNeptune" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:MessageBox Caption="{x:Null}" Buttons="OkCancel" ChosenButton="[ButtonNeptune]" DisplayName="Solar System Library" sap:VirtualizedContainerService.HintSize="866,59" sap2010:WorkflowViewState.IdRef="MessageBox_50" Text="[&quot;You selected &quot; + Topic + &quot;: Click OK to learn more...&quot;]" />
+        <If Condition="[ButtonNeptune = &quot;Ok&quot;]" DisplayName="If: Neptune" sap:VirtualizedContainerService.HintSize="866,295" sap2010:WorkflowViewState.IdRef="If_25">
+          <If.Then>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open Chrome browser to webpage that provides more information about Neptune." BrowserType="Chrome" DisplayName="Open Browser: Neptune" sap:VirtualizedContainerService.HintSize="485,147" sap2010:WorkflowViewState.IdRef="OpenBrowser_25" Url="https://en.wikipedia.org/wiki/Neptune">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </If.Then>
+          <If.Else>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Cancelled" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_51" Text="[&quot;Library will now close.&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence x:Key="Pluto" DisplayName="Selection: Pluto" sap:VirtualizedContainerService.HintSize="908,486" sap2010:WorkflowViewState.IdRef="Sequence_27">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="ButtonPluto" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:MessageBox Caption="{x:Null}" Buttons="OkCancel" ChosenButton="[ButtonPluto]" DisplayName="Solar System Library" sap:VirtualizedContainerService.HintSize="866,59" sap2010:WorkflowViewState.IdRef="MessageBox_52" Text="[&quot;You selected &quot; + Topic + &quot;: Click OK to learn more...&quot;]" />
+        <If Condition="[ButtonPluto = &quot;Ok&quot;]" DisplayName="If: Pluto" sap:VirtualizedContainerService.HintSize="866,295" sap2010:WorkflowViewState.IdRef="If_26">
+          <If.Then>
+            <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Open Chrome browser to webpage that provides more information about Pluto." BrowserType="Chrome" DisplayName="Open Browser: Pluto" sap:VirtualizedContainerService.HintSize="485,147" sap2010:WorkflowViewState.IdRef="OpenBrowser_26" Url="https://en.wikipedia.org/wiki/Pluto">
+              <ui:OpenBrowser.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                </ActivityAction>
+              </ui:OpenBrowser.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:OpenBrowser>
+          </If.Then>
+          <If.Else>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Cancelled" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_53" Text="[&quot;Library will now close.&quot;]" />
+          </If.Else>
+        </If>
+      </Sequence>
+    </Switch>
+  </Sequence>
+</Activity>
